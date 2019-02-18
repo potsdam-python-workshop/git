@@ -1,11 +1,11 @@
 import getpass
 import pickle
+import hashlib
 
 def pwhash(password):
-    hashedpw = 0
-    for char in password:
-        hashedpw += ord(char)
-    return hashedpw
+    m = hashlib.sha512()
+    m.update(password.encode('utf-8'))
+    return m.digest()
 
 def get_credentials():
     username = input("Enter username:")

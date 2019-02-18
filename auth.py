@@ -1,9 +1,12 @@
 import getpass
 import pickle
 import random
+import string
+
+CHARS = string.ascii_letters + string.digits + string.punctuation
 
 def get_salt():
-    return "".join(random.choices("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789", k = 10))
+    return "".join(random.choices(CHARS, k = 10))
 
 def pwhash(password, salt):
     hashedpw = 0

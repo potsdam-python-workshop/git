@@ -46,23 +46,35 @@ To make it for real:
   - better way of generating passwords or random tokens: the [`secrets`](https://docs.python.org/3/library/secrets.html) module
   - cracking a password database is a form of art, see for example the [John the Ripper](http://www.openwall.com/john/) password cracker
 
-### Installing Git GUI on different systems
+### Installing Git GUI
 
-If you encounter something like *git gui is not a git command* then probably Git GUI isn't installed yet.
+If you encounter something like `git gui is not a git command` then probably Git GUI isn't installed yet. You can add it to your Git installation in the following ways:
 
 #### macOS
-If
-> git --version
-outputs something with "AppleGit" you have a slimmed down version of Git. Download the official installer from https://git-scm.com/download/mac and install it. Create an alias in .bash_profile
-> nano ~/.bash_profile
-Add a line "alias git='/usr/local/git/bin/git', then save and exit. Activate the current configuration with
-> source ~/.bash_profile
-Test the change
-> git gui
+```
+# If this command outputs something with "AppleGit" you have a slimmed down version of Git
+git --version
+# In that case, continue with the following commands
+
+# 1. Download the official installer from https://git-scm.com/download/mac and install it
+...
+
+# 2. Create an alias in .bash_profile
+# Add a line "alias git='/usr/local/git/bin/git'" (without the ""), then save and exit
+nano ~/.bash_profile
+
+# 3. Activate the current configuration
+source ~/.bash_profile
+
+# 4. Test the change
+git gui
+```
 
 #### Ubuntu
-Use
-> sudo apt install git-gui
-to install Git GUI after installing Git. If you do a fresh Git install, you could also use
-> sudo apt install git-all
-to get everything at once
+```
+# Use the following command to add Git GUI to your installation
+sudo apt install git-gui
+
+# If you do a fresh Git install, you could also use this command to get everything at once
+sudo apt install git-all
+```

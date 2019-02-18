@@ -21,7 +21,7 @@ def authenticate(username, password, pwdb):
     return status
 
 def get_salt():
-    salt="a"
+    salt=""
     for x in range(1, 10):
         salt += chr(random.randint(0,1114111))
     return salt
